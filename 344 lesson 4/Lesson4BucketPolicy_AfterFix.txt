@@ -1,0 +1,32 @@
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicTxtUploadsOnly",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::dvsa-feedback-bucket-530467655445-us-east-1/*.txt"
+    },
+    {
+      "Sid": "AdminFullBucketAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::530467655445:root"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::dvsa-feedback-bucket-530467655445-us-east-1",
+        "arn:aws:s3:::dvsa-feedback-bucket-530467655445-us-east-1/*"
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
